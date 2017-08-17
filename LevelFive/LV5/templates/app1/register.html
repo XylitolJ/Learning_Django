@@ -1,0 +1,21 @@
+{% extends 'app1/base.html' %}
+{% load staticfiles %}
+{% block title %}
+<title>Join Lannister</title>
+{% endblock %}
+
+{% block body %}
+{% if registered %}
+<h3>Thank you for registering~</h3>
+{% else %}
+<h3 align="center">Want to become a member of Lannister ? Give me your info</h3>
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <input type="submit" value="Register">
+
+</form>
+{% endif %}
+
+{% endblock %}

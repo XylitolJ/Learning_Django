@@ -38,4 +38,5 @@ def register(request):
 def login(request):
     pass
 
-# Create your views here.
+def just_test(request):
+    pass
